@@ -1,0 +1,12 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3568
+
+This plugin allows you to insert tabs only for indentation.
+If left part of the cursor position in current line has only tabs or spaces,
+then they will be replaced by tabs and one more tab will be added. 
+In other cases, only spaces will be added. That's all.
+I think, it will helpful because tabs not used for code alignment.
+But, if you really need to insert tab, you can use <S-Tab> for this.
+
+PS: Sorry, another plugin doing the same can be found here:
+http://www.vim.org/scripts/script.php?script_id=2308
+I didn't search at all.
