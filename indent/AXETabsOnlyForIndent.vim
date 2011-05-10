@@ -6,8 +6,8 @@
 ""                 added.
 "" Maintainer:     Makoto Nokata <nokatamakoto@gmail.com>
 "" Licence:        No Warranties. Do whatever you want with this.
-"" Last Change:    2011-04-29
-"" Version:        1.0
+"" Last Change:    2011-05-10
+"" Version:        1.1
 "" Usage:          Only two things:
 ""                 1) Put this file to the plugin directory;
 ""                 2) Add the folowing line to your ~/.vimrc config:
@@ -23,10 +23,10 @@ let loaded_AXETabsOnlyForIndent = 1
 
 function! s:AXETabsOnlyForIndent()
 	if mode() != 'i' | return | endif
-	let cbefore = strpart( getline('.'), 0, col('.')-1 )
+	let cbefore = strpart( getline('.'), 0, col('.') - 1 )
 	let tab = "\t"
 	if substitute( cbefore, '[\t ]*', '', '' ) != ''
-		let tab = printf( '%'.(&ts - (virtcol('.') % &ts)).'s', '' )
+		let tab = printf( '%'.(&ts - ((virtcol('.') - 1) % &ts)).'s', '' )
 	endif
 	return tab
 endfunction
